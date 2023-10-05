@@ -1,4 +1,6 @@
 import ToggleSwitch from "./ui/ToggleSwitch"
+import { cardItems } from "@/lib/card";
+import CardLink from "./ui/CardLink";
 
 
 const DefaultLayout = () => {
@@ -19,7 +21,7 @@ const DefaultLayout = () => {
         <h1 className="text-paw_black text-44 font-medium dark:text-white">
           Hi!<span>&#128075;</span>
         </h1>
-        <p className="text-paw_grey text-20">
+        <p className="text-grey_11 text-20">
           Welcome to MacPaw Bootcamp 2023
         </p>
       </div>
@@ -28,7 +30,16 @@ const DefaultLayout = () => {
           Lets start using The Cat API
         </p>
         <div className="flex lg:gap-x-8 w-full flex-col gap-y-5 lg:flex-row">
-          {/* cards */}
+          {
+            cardItems.map(card => (
+              <CardLink
+                key={card.id}
+                variant={card.variant} 
+                path={card.path}
+                imgPath={card.img}
+              />
+            ))
+          }
         </div>
       </div>
     </div>

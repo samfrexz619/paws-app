@@ -1,4 +1,4 @@
-import useDark from "@/useDark";
+import useDark from "@/hooks/useDark";
 import { useState } from "react"
 
 

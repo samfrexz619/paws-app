@@ -16,12 +16,18 @@ export default {
         paw_hov: '#FBE0DC',
         grey_10: '#F8F8F7',
         grey_black: 'rgba(255, 255, 255, 0.05)',
+        grey_11: '#8C8C8C',
+        bod: 'rgba(255, 255, 255, 0.60)',
       },
       fontSize: {
         12: '12px',
         44: '44px',
         20: '20px',
-      }
+      },
+      borderRadius: {
+        20: '20px',
+        10: '10px',
+      },
     },
   },
   plugins: [],
