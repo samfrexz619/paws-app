@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 
  const useDark =(): [string, React.Dispatch<React.SetStateAction<string>>] => {
+  
   const [theme, setTheme] = useState(localStorage.theme || 'light')
 
   const colorTheme = theme === 'dark' ? 'light' : 'dark'
