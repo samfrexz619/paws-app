@@ -1,28 +1,18 @@
 import { useState, useEffect } from "react";
 
 
-const useDark = (key: string) => {
+ const useDark =(): [string, React.Dispatch<React.SetStateAction<string>>] => {
+  const [theme, setTheme] = useState(localStorage.theme || 'light')
 
-  const [isDark, setIsDark] = useState(false)
-
-  const [flag, setFlag] = useState(false);
-
-  useEffect(()=> {
-    const setMode = localStorage.getItem(key)
-    if(setMode) {
-      setIsDark(JSON.parse(setMode))
-    }
-    setFlag(true)
-  }, [])
+  const colorTheme = theme === 'dark' ? 'light' : 'dark'
 
   useEffect(()=> {
-    if(flag) {
-      localStorage.setItem(key, JSON.stringify(isDark))
-    }
-  }, [isDark, flag])
+    const root = document.documentElement;
+    root.classList.remove(colorTheme)
+    root.classList.add(theme)
+    localStorage.setItem('theme', theme)
+  },[theme, colorTheme])
 
-  return {setIsDark, isDark}
-
-}
- 
+  return [colorTheme, setTheme]
+ }
 export default useDark;
