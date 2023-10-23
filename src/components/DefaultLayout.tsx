@@ -5,7 +5,7 @@ import CardLink from "./ui/CardLink";
 
 const DefaultLayout = () => {
   return ( 
-    <div className="lg:w-3/4 w-11/12 mx-auto h-screen">
+    <div className="lg:w-3/4 w-11/12 mx-auto min-h-screen">
       <header className="w-full h-24 items-center flex justify-between">
         <span className="flex gap-x-2 py-1 items-center">
           <svg width="24" height="24" viewBox="0 0 24 24">

@@ -37,3 +37,15 @@ input:checked + .toggle__slider {
 input:checked + .toggle__slider::before {
   transform: translateX(18px);
 }
+
+.light_bg {
+  background: url('./assets/images/girl-pet.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dark_bg {
+  background: url('./assets/images/girl-pet.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

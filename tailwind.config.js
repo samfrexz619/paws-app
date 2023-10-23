@@ -29,6 +29,10 @@ export default {
         20: '20px',
         10: '10px',
       },
+      backgroundImage: {
+        bgl: "url('./src/assets/images/girl-pet.png')",
+        dgl: "url('./src/assets/images/dark-girl.png')"
+      }
     },
   },
   plugins: [],
