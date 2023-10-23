@@ -36,7 +36,7 @@ const CardLink = ({ variant, imgPath, path}: CardProps) => {
       </NavLink>
       <NavLink 
         to={path}
-        className={`${pathname === `${path}` ? 'bg-paw_pry text-white' : 'bg-white text-paw_pry'} uppercase flex items-center justify-center w-full  rounded-[10px] py-3 text-paw_pry text-12 hover:bg-hover_pry dark:bg-black_10 dark:text-paw_pry`}
+        className={`${pathname === `${path}` ? 'bg-paw_pry text-white' : 'bg-white text-paw_pry'} uppercase flex items-center justify-center w-full  rounded-[10px] py-3 text-paw_pry text-12 hover:bg-hov dark:bg-black_10 dark:text-paw_pry`}
       >
         {variant}
       </NavLink>

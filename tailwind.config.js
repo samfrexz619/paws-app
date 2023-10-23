@@ -18,6 +18,7 @@ export default {
         grey_black: 'rgba(255, 255, 255, 0.05)',
         grey_11: '#8C8C8C',
         bod: 'rgba(255, 255, 255, 0.60)',
+        hov: '#FBE0DC'
       },
       fontSize: {
         12: '12px',
