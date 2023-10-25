@@ -21,6 +21,7 @@ export default {
         hov: '#FBE0DC',
         pink_10: 'rgba(255, 134, 142, 0.20)',
         black_10: 'rgba(255, 255, 255, 0.10)',
+        modal: 'rgba(0, 0, 0, 0.4)',
       },
       fontSize: {
         12: '12px',

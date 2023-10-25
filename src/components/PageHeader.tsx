@@ -1,7 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
 import SearchInput from "./SearchInput";
 import EmojiIcons from "./ui/EmojiIcon";
-
+import Navigation from "./Navigation";
 
 interface Prop {
   children: React.ReactNode;
@@ -10,6 +11,8 @@ interface Prop {
 const PageHeader = ({ children }: Prop) => {
 
   const { pathname } = useLocation()
+
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(false)
 
   const emojiLinks = [
     {
@@ -30,12 +33,18 @@ const PageHeader = ({ children }: Prop) => {
     },
   ]
 
+  const handleNav =()=> {
+    setShowMobileNav(prev => !prev)
+    console.log(3);
+    
+  }
+
   return ( 
     <>
       { pathname !== '/' &&
         <header className="py-10 px-7 w-full items-center justify-between">
         <div className="flex lg:flex-row w-full justify-between lg:gap-x-3 flex-wrap lg:flex-nowrap gap-y-5">
-          <button className="lg:hidden h-606 w-606 block bg-white rounded-20 text-paw_pry dark:bg-bgg">
+          <button onClick={handleNav} className="lg:hidden h-606 w-606 block bg-white rounded-20 text-paw_pry dark:bg-grey_black">
             <span className="w-full flex justify-center items-center h-full mt-1">
               <svg width='30' height='30' viewBox='0 0 30 30'>
                 <use xlinkHref="/sprite.svg#menu" />
@@ -63,6 +72,7 @@ const PageHeader = ({ children }: Prop) => {
       <main>
         { children }
       </main>
+      { showMobileNav && <Navigation toggleNav={handleNav} />}
     </>
    );
 }
