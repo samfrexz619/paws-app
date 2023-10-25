@@ -18,7 +18,9 @@ export default {
         grey_black: 'rgba(255, 255, 255, 0.05)',
         grey_11: '#8C8C8C',
         bod: 'rgba(255, 255, 255, 0.60)',
-        hov: '#FBE0DC'
+        hov: '#FBE0DC',
+        pink_10: 'rgba(255, 134, 142, 0.20)',
+        black_10: 'rgba(255, 255, 255, 0.10)',
       },
       fontSize: {
         12: '12px',
@@ -32,6 +34,9 @@ export default {
       backgroundImage: {
         bgl: "url('./src/assets/images/girl-pet.png')",
         dgl: "url('./src/assets/images/dark-girl.png')"
+      },
+      spacing: {
+        606: '60px'
       }
     },
   },
