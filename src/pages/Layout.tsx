@@ -9,7 +9,7 @@ const Layout = () => {
       <div className='hidden lg:block lg:w-1/2 w-0'>
         <DefaultLayout  />
       </div>
-      <div className="lg:w-1/2 w-full lg:fixed lg:left-1/2 lg:inset-y-0 flex-col flex">
+      <div className="lg:w-1/2 px-7 w-full lg:fixed lg:left-1/2 inset-y-0 flex-col flex overflow-y-auto reset">
         <PageHeader>
           <Outlet  />
         </PageHeader>

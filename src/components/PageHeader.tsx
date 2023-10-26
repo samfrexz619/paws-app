@@ -42,7 +42,7 @@ const PageHeader = ({ children }: Prop) => {
   return ( 
     <>
       { pathname !== '/' &&
-        <header className="py-10 px-7 w-full items-center justify-between">
+        <header className="py-10 w-full items-center justify-between">
         <div className="flex lg:flex-row w-full justify-between lg:gap-x-3 flex-wrap lg:flex-nowrap gap-y-5">
           <button onClick={handleNav} className="lg:hidden h-606 w-606 block bg-white rounded-20 text-paw_pry dark:bg-grey_black">
             <span className="w-full flex justify-center items-center h-full mt-1">
