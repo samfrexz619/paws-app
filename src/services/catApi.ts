@@ -9,7 +9,7 @@ const catsApi = axios.create({
 })
 
 export const fetchCatImages = async()=> {
-  const res = await catsApi.get('?limit=50')
+  const res = await catsApi.get('?limit=10')
   return res
 }
 

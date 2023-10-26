@@ -6,7 +6,6 @@ import { CatData } from "@/lib/type";
 
 interface Props {
   catImages: CatData[];
-
 }
 
 const VotingImage = ({ catImages }: Props) => {
@@ -32,7 +31,11 @@ const VotingImage = ({ catImages }: Props) => {
         </div>
       </div>
       <section className="w-full my-6">
-        <ImageItems catImages={catImages} currentSlide={currImage} />
+        <ImageItems 
+          catImages={catImages} 
+          currentSlide={currImage} 
+          setCurrentSlide={setCurrImage}
+        />
       </section>
     </div>
    );
