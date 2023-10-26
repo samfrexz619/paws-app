@@ -1,4 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
+
+
 
 interface CardProps {
   variant: string;
@@ -11,6 +14,8 @@ const CardLink = ({ variant, imgPath, path}: CardProps) => {
   const linkImg = new URL(`../../assets/images/${imgPath}.png`, import.meta.url).href
   
   const { pathname } = useLocation()
+
+  const [isHover, setIsHover] = useState(false)
 
   return ( 
     <div className="lg:w-138 block w-full">
@@ -32,11 +37,13 @@ const CardLink = ({ variant, imgPath, path}: CardProps) => {
           width={100} 
           height={125}
           style={{width: 'auto', height: 'auto'}} 
+          onMouseEnter={()=> setIsHover(true)}
+          onMouseLeave={()=> setIsHover(false)}
         />
       </NavLink>
       <NavLink 
         to={path}
-        className={`${pathname === `${path}` ? 'bg-paw_pry dark:bg-paw_pry text-white dark:text-white' : 'bg-white text-paw_pry'} uppercase flex items-center justify-center w-full mx-auto rounded-[10px] py-3 my-2 md:my-0 text-paw_pry text-12 hover:bg-hov dark:bg-black_10 dark:text-paw_pry dark:hover:bg-hov`}
+        className={`${pathname === `${path}` ? 'bg-paw_pry dark:bg-paw_pry text-white dark:text-white' : 'bg-white text-paw_pry'} uppercase flex items-center justify-center w-full mx-auto rounded-[10px] py-3 my-2 md:my-0 text-paw_pry text-12 hover:bg-hov dark:bg-black_10 dark:text-paw_pry dark:hover:bg-hov ${isHover ? 'bg-red-100' : ''}`}
       >
         {variant}
       </NavLink>
