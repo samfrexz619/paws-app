@@ -22,7 +22,7 @@ const DefaultLayout = () => {
           Hi!<span>&#128075;</span>
         </h1>
         <p className="text-grey_11 text-20">
-          Welcome to MacPaw Bootcamp 2023
+          Welcome to Samfrexz Bootcamp 2023
         </p>
       </div>
       <div className="pt-12">

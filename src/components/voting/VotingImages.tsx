@@ -1,26 +1,24 @@
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import ImageItems from "./ImageItems";
-import { useEffect, useState } from "react";
-import { fetchCatImages } from "@/services/catApi";
 import { CatData } from "@/lib/type";
 
 
-const VotingImage = () => {
+interface Props {
+  catImages: CatData[];
 
-  const [cats, setCats] = useState<CatData[]>([])
+}
+
+const VotingImage = ({ catImages }: Props) => {
 
   const [ currImage, setCurrImage ] = useState(0)
 
   const { pathname } = useLocation()
 
-  useEffect(()=> {
-    fetchCatImages()
-    .then(res => setCats(res.data))
-  }, [])
-
   const handleNext =()=> {
-    setCurrImage(currImage === cats.length - 1 ? 0 : currImage + 1)
+    setCurrImage(currImage === catImages.length - 1 ? 0 : currImage + 1)
   }  
+
   return ( 
     <div className="w-full">
       <div className="flex gap-x-5">
@@ -34,7 +32,7 @@ const VotingImage = () => {
         </div>
       </div>
       <section className="w-full my-6">
-        <ImageItems catImages={cats} currentSlide={currImage} />
+        <ImageItems catImages={catImages} currentSlide={currImage} />
       </section>
     </div>
    );
