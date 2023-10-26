@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import ImageItems from "./ImageItems";
 import { CatData } from "@/lib/type";
+import Carousel from "./Carousel";
 
 
 interface Props {
@@ -31,7 +31,7 @@ const VotingImage = ({ catImages }: Props) => {
         </div>
       </div>
       <section className="w-full my-6">
-        <ImageItems 
+        <Carousel 
           catImages={catImages} 
           currentSlide={currImage} 
           setCurrentSlide={setCurrImage}

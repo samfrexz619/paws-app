@@ -1,6 +1,7 @@
 import { CatData } from '@/lib/type';
 import ImageIndicator from './Indicators';
 import Image from './Image';
+import ReactionBtns from './ReactionBtns';
 
 
 interface Props {
@@ -9,9 +10,9 @@ interface Props {
   setCurrentSlide: (idx: number)=> void;
 }
 
-const ImageItems = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
+const Carousel = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
   return ( 
-    <div className="w-full h-[360px] flex">
+    <div className="w-full h-[360px] flex relative">
       {
         catImages.map((image, index) => (
           <Image
@@ -22,6 +23,9 @@ const ImageItems = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
           />
         ))
       }
+      <div className="absolute -bottom-8 w-full flex justify-center">
+        <ReactionBtns  />
+      </div>
       <span className='absolute flex bottom-0 gap-x-2 bg-grey_10 h-10 px-5 items-center shadow-sm rounded-20 dark:bg-black_5'>
         {
           catImages.map((img, index)=> (
@@ -39,4 +43,4 @@ const ImageItems = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
    );
 }
  
-export default ImageItems;
+export default Carousel;
