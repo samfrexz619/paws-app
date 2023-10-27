@@ -11,6 +11,9 @@ interface Props {
 }
 
 const Carousel = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
+
+  const show = false;
+  
   return ( 
     <div className="w-full h-[360px] flex relative">
       {
@@ -24,9 +27,9 @@ const Carousel = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
         ))
       }
       <div className="absolute -bottom-8 w-full flex justify-center">
-        <ReactionBtns  />
+        <ReactionBtns />
       </div>
-      <span className='absolute flex bottom-0 gap-x-2 bg-grey_10 h-10 px-5 items-center shadow-sm rounded-20 dark:bg-black_5'>
+      {show && <span className='absolute flex bottom-0 gap-x-2 bg-grey_10 h-10 px-5 items-center shadow-sm rounded-20 dark:bg-black_5'>
         {
           catImages.map((img, index)=> (
             <ImageIndicator 
@@ -38,7 +41,7 @@ const Carousel = ({ catImages, currentSlide, setCurrentSlide }: Props) => {
             />
           ))
         }
-      </span>
+      </span>}
     </div>
    );
 }

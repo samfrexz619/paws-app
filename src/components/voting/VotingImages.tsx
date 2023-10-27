@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { CatData } from "@/lib/type";
 import Carousel from "./Carousel";
+import ActionLogs from "./ActionLogs";
 
 
 interface Props {
@@ -16,7 +17,7 @@ const VotingImage = ({ catImages }: Props) => {
 
   const handleNext =()=> {
     setCurrImage(currImage === catImages.length - 1 ? 0 : currImage + 1)
-  }  
+  }
 
   return ( 
     <div className="w-full">
@@ -36,6 +37,9 @@ const VotingImage = ({ catImages }: Props) => {
           currentSlide={currImage} 
           setCurrentSlide={setCurrImage}
         />
+      </section>
+      <section className="mt-16">
+        <ActionLogs  />
       </section>
     </div>
    );
