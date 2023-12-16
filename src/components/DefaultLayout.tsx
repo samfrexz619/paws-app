@@ -11,7 +11,7 @@ const DefaultLayout = () => {
           <svg width="24" height="24" viewBox="0 0 24 24">
             <use xlinkHref="/sprite.svg#logo" />
           </svg>
-          <h1 className="text-paw_black dark:text-white text-2xl  font-medium">PetsPaw</h1>
+          <h1 className="text-paw_black dark:text-white text-2xl  font-medium">Samfrexz</h1>
         </span>
        <div>
         <ToggleSwitch  />

@@ -50,5 +50,5 @@ const CardLink = ({ variant, imgPath, path}: CardProps) => {
     </div>
    );
 }
- 
+
 export default CardLink;
