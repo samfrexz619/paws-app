@@ -1,23 +1,24 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import VotingImage from "@/components/voting/VotingImages"
-import { fetchCatImages } from "@/services/catApi"
-import { CatData } from "@/lib/type"
+import { useAppSelector, useAppDispatch } from "@/app/hooks"
+import { fetchCats } from "@/features/votingSlice"
 
 
 
 const Voting = () => {
 
-  const [cats, setCats] = useState<CatData[]>([])
+  const catImages = useAppSelector(state => state.voting.catData)
 
-  useEffect(()=> {
-    fetchCatImages()
-    .then(res => setCats(res.data))
-  }, [])
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchCats())
+  }, [dispatch])
  
   return (
     <section className="bg-white rounded-20 p-5 w-full dark:bg-grey_black">
       <div>
-        <VotingImage catImages={cats} />
+        <VotingImage catImages={catImages} />
       </div>
     </section>
   )
