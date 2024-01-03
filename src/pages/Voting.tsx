@@ -7,13 +7,13 @@ import { fetchCats } from "@/features/votingSlice"
 
 const Voting = () => {
 
-  const catImages = useAppSelector(state => state.voting.catData)
+  const catImages = useAppSelector(state => state.voting.catData);
 
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchCats())
-  }, [dispatch])
+  }, [dispatch]);
  
   return (
     <section className="bg-white rounded-20 p-5 w-full dark:bg-grey_black">
@@ -22,6 +22,6 @@ const Voting = () => {
       </div>
     </section>
   )
-}
+};
 
-export default Voting
+export default Voting;

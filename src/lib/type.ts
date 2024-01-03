@@ -17,3 +17,26 @@ export interface CatData {
   width?: number;
   height?: number;
 }
+
+type Image = {
+  height: number;
+  width: number;
+  id: string;
+  url: string;
+}
+
+type Weight = {
+  imperial: string;
+  metric: string;
+}
+
+export interface BreedData {
+  description: string;
+  image: Image;
+  name: string;
+  id: string;
+  temperament: string;
+  life_span: string;
+  origin: string;
+  weight: Weight;
+}

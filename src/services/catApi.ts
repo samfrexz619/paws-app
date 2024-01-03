@@ -2,21 +2,26 @@ import axios from "axios";
 
 
 const catsApi = axios.create({
-  baseURL: 'https://api.thecatapi.com/v1/images/search',
+  baseURL: 'https://api.thecatapi.com/v1',
   headers: {
     'x-api-key': 'live_o4VNf4DjdlXQTVV4Ry2l8qL1qYOQPD1FhsESP0YrH83oa2uFGsQqPZsYfbevlZ6F'
   }
 })
 
-export const fetchCatImages = async()=> {
-  const res = await catsApi.get('?limit=10')
+export const fetchCatImages = async () => {
+  const res = await catsApi.get('/images/search?limit=10')
   return res
+}
+
+export const fetchBreeds = async () => {
+  const res = await catsApi.get('/breeds')
+  return res;
 }
 
 // const postsApi = axios.create({
 //   baseURL: 'https://jsonplaceholder.typicode.com'
 // })
-
+// https://api.thecatapi.com/v1/breeds
 // export const fetchPosts = async()=> {
 //   const res = await postsApi.get('/posts')
 //   let min = 1;

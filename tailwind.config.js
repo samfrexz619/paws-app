@@ -33,13 +33,15 @@ export default {
       borderRadius: {
         20: '20px',
         10: '10px',
+        30: '30px',
       },
       backgroundImage: {
         bgl: "url('./src/assets/images/girl-pet.png')",
         dgl: "url('./src/assets/images/dark-girl.png')"
       },
       spacing: {
-        606: '60px'
+        606: '60px',
+        300: '300px'
       }
     },
   },
